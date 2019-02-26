@@ -1,0 +1,15 @@
+header {
+    background-color: lightblue;
+    height: 50px;
+}
+
+footer {
+    background-color: lightblue;
+    height: 50px;
+}
+
+.login-footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}

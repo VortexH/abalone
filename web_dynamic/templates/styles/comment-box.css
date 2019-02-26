@@ -1,0 +1,52 @@
+.comment-box {
+     text-align: center;
+ }
+.comment-box h3 {
+    text-align: left;
+}
+
+#message-feed {
+    background-color: white;
+    height: 250px;
+    overflow: scroll;
+}
+
+#message-feed ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin-left: 30px;
+}
+
+#submit-button {
+    margin: 6px 0;
+}
+
+textarea {
+    margin: 0 auto;
+    resize: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90;
+    border: none;
+}
+
+.time {
+    float: right;
+    margin: 10px 30px 0 0;
+    font-size: 10px;
+    color: lightgrey;
+}
+
+#submit-comment {
+    vertical-align: top;
+    margin-top: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+}
+#submit-comment:active {
+    background: grey;
+    color: white;
+}
