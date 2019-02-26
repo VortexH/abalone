@@ -4,13 +4,13 @@ $(document).ready(function(){
         let newComment = $('textarea.new-comment');
         let textVal = newComment.val();
         let time = new Date();
-        let time_db = time.toLocaleString();
+        let time_db = String(time.toLocaleString());
         let time_chat = time.toLocaleTimeString();
         feed.stop().animate({ scrollTop: feed[0].scrollHeight}, 1000);
         newComment.val("");
         $('#message-feed ul').append(`<li class="loaded-comment"><span class="username"><strong>Username:</strong> </span><span class="time">${time_chat}</span><br><span class="message">${textVal}</span></li>`);
         videoId = localStorage.getItem('video_id');
-        dict = {videoId: ['user_name', 'comment', 'time']}
+        dict = {videoId: ['user_name', textVal, time_db]}
        $.ajax({
              url: 'https://abalone.holberton.us/api/submit_comment',
              dataType: 'json',
