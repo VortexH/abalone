@@ -9,6 +9,16 @@ $(document).ready(function(){
         feed.stop().animate({ scrollTop: feed[0].scrollHeight}, 1000);
         newComment.val("");
         $('#message-feed ul').append(`<li class="loaded-comment"><span class="username"><strong>Username:</strong> </span><span class="time">${time_chat}</span><br><span class="message">${textVal}</span></li>`);
+        videoId = localStorage.getItem('video_id');
+        dict = {videoId: ['user_name', 'comment', 'time']}
+       $.ajax({
+             url: 'https://abalone.holberton.us/api/submit_comment',
+             dataType: 'json',
+             type: 'post',
+             contentType: 'application/json',
+             data: JSON.stringify(dict),
+         success: function(data) {}
+       });
     });
     // Enable enter key to submit comment.
     $("textarea").keypress(function (e) {

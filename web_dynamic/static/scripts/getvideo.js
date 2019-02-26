@@ -2,14 +2,16 @@ $(document).ready(function(){
     $('#submit-video').click(function(){
         let searchText = $('#search-input');
         let videoId = searchText.val();
+        localStorage.clear();
+        localStorage.setItem("video_id", videoId);
         searchText.val("");
         console.log(videoId);
         $.getJSON('https://www.googleapis.com/youtube/v3/videos?id=' + videoId + '&key=AIzaSyArpdRTVCbPHEpMBZdW2sl9btD5igbul0E&part=status', function (video) {
         	try {
-        		if (video.items[0].status.embeddable) {
-        			$('.video-container').append(`<iframe
+        		if (video.items[0].status.embeddable) { $('.video-container').append(`<iframe
 width="640" height="360"src="https://www.youtube.com/embed/${videoId}">
 </iframe> `);
+                $.get('https://abalone.holberton.us/api/get_comments/' + String(videoId), function(status) {});
         		} else {
         			throw "bad";
         		}
