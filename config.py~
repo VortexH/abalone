@@ -1,0 +1,4 @@
+import os
+
+class Config(object):
+    APP_SECRET_KEY = os.environ.get('APP_SECRET_KEY') or 'e4e6f3ac4014f9e5b039b879c0e69c8e'
