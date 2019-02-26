@@ -16,7 +16,7 @@ def get_comments(video_id):
     db = MySQLdb.connect(
                   host='localhost',
                   user='root',
-                  passwd='',
+                  passwd='rkLotus956',
                   db='hackday_abalone')
 
     cur = db.cursor()
@@ -43,7 +43,9 @@ def submit_comment():
         {'video_id': [ [username, comment, timestamp], ... ]}
 
     """
-    return(request)
+    print(type(request.form))
+    print(request.form)
+    return(jsonify(request.json))
 
 
 if __name__ == "__main__":
