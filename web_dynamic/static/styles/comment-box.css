@@ -46,7 +46,8 @@ textarea {
     padding: 0;
     border: none;
 }
-#submit-comment:active {
+#submit-comment:active,
+#submit-video:active {
     background: grey;
     color: white;
 }
