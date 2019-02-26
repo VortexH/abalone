@@ -16,14 +16,12 @@ def get_comments(video_id):
     db = MySQLdb.connect(
                   host='localhost',
                   user='root',
-                  passwd='rkLotus956',
+                  passwd='',
                   db='hackday_abalone')
 
     cur = db.cursor()
-
-    result = cur.execute(
-                '''SELECT * FROM comments WHERE video_id={}'''.format(video_id))
-
+    query_string = 'SELECT * FROM comments WHERE video_id="{}"'.format(video_id)
+    cur.execute(query_string)  
     response = {}
     global_list = []
     for row in cur.fetchall():
