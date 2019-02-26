@@ -55,38 +55,27 @@ def submit_comment():
 
 
     response_dict = json.loads(request.data.decode('utf-8'))
-    print(response_dict)
     value = list(response_dict.values())
-    post_parameters = value[0]
-    print("The payload sent in the post request is {}".format(post_parameters))
-    username = post_parameters[0]
-    print("The username is {}".format(username))
-    query_string = 'SELECT id FROM users WHERE name="{}"'.format(username)
-    print(query_string)
-    
-    cur.execute(query_string)
-    user_id= cur.fetchall()[0]
-    print(type(user_id))
-    print(user_id[0])
-
-    print(response_dict.keys())
-    print(list(response_dict.keys()))
+    post_list_data = value[0]
+    username = post_list_data[0]
+    comment = post_list_data[1]
+    timestamp = post_list_data[2]
     video_id = list(response_dict.keys())[0]
-    print(user_id)
-    print(video_id)
-    print(post_parameters[1])
-    print(post_parameters[2])
+
+    query_string = 'SELECT id FROM users WHERE name="{}"'.format(username)
+    cur.execute(query_string)
+    user_id_tuple = cur.fetchall()[0]
+
+    user_id = user_id_tuple[0]
+
     sql_string = 'INSERT INTO comments (user_id, video_id, comment, timestamp) VALUES ({}, "{}", "{}", "{}")'.format(
                     user_id,
                     video_id,
-                    post_parameters[1],
-                    post_parameters[2]
+                    comment,
+                    timestamp
                     )
-
-    #cur.execute("INSERT INTO comments (user_id, video_id, comment, timestamp) VALUES (1, 'alsdjfasdf', 'hey whatups askjfd', 'april152019')")
-
-
     cur.execute(sql_string)
+    db.commit()
 
     db.close()
 
