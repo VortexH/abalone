@@ -21,8 +21,8 @@ align-content: center;
 }
 
 .card{
-min-height: 500px;
-margin-top:40px;
+min-height: 300px;
+margin: 20px auto;
 max-width: 55%;
 background-color: lightblue;
 padding: 0;
@@ -49,21 +49,4 @@ margin-left: 4px;
     max-width: 500px;
     margin: 20px auto;
     text-align: center;
-}
-
-#submit-video {
-    border: none;
-}
-.video-container iframe,
-.video-container object,
-.video-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.username {
-    font-style: bold;
 }

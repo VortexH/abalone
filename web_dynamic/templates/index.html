@@ -15,6 +15,7 @@
 
         <!-- Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     	<!--Bootsrap 4 CDN-->
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" id="bootstrap-css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -30,22 +31,20 @@
     <body>
         <div class="container-fluid">
             <header class="row">
-                <h3 id="logout">Logout</h3>
+                <h3 id="logout"><a href="#">Logout</a></h3>
             </header>
         	<div class="row">
                 <div class="search-bar col-12">
-                    <input id="search-input" type="text" placeholder="Enter video id" name="" value="">
-                    <button class="col-2" id="submit-video" class="submit-button" type='submit'>
-                        Submit
-                    </button>
+                    <input type="text" placeholder="Enter video id" name="" value="">
+                    <input id="submit-button" type='submit' value='Submit' />
                 </div>
             </div>
-            <div class="row justify-content-center">
-        		<div class="card video-player col-lg-10">
+            <div class="row">
+        		<div class="card video-player col-12">
         			<div class="card-header">
         				<h3>Video</h3>
         			</div>
-        			<div class="card-body video-container">
+        			<div class="card-body">
 
         			</div>
         			<div class="card-footer">
@@ -56,7 +55,7 @@
         				</div>
         			</div>
         		</div>
-                <div class="card comment-box col-3">
+                <div class="card comment-box col-12">
                     <div class="card-header">
                         <h3>Chat</h3>
                     </div>
@@ -64,26 +63,18 @@
                         <ul>
                         </ul>
                     </div>
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-center stats">
-                            <div id="comment-area">
-                                <textarea class="col-9 new-comment" name='d-flex' placeholder="Enter your comment" autofocus></textarea>
-                                <button class="col-2" id="submit-comment" class="submit-button" type='submit'>
-                                    <i class="fa fa-comment"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                        </div>
+                    <div id="comment-area">
+                        <textarea class="col-9 new-comment" name='d-flex' placeholder="Enter your comment" autofocus></textarea>
+                        <button class="col-2" id="submit-comment" class="submit-button" type='submit'>
+                            <i class="fa fa-comment"></i>
+                        </button>
                     </div>
                 </div>
             </div>
             <footer class="row justify-content-center">
-                <a href="https://twitter.com/AbaloneC6?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AbaloneC6</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FAbalone-313819089491937%2F&width=106&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId=1082169991968000" width="106" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                footer goes here
             </footer>
         </div>
     </body>
     <script type="text/javascript" src="../static/scripts/post-comment.js"></script>
-    <script type="text/javascript" src="../static/scripts/getvideo.js"></script>
 </html>
