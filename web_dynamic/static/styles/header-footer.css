@@ -13,3 +13,9 @@ footer {
     position: fixed;
     width: 100%;
 }
+
+#logout {
+    margin-top: 5px;
+    font-size: 20px;
+    float: right;
+}

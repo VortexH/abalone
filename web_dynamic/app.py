@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.url.map.strict_slashes = False
+app.url_map.strict_slashes = False
 port = 5000
 host = '0.0.0.0'
 
