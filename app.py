@@ -38,11 +38,11 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 credentials = {
-        "client_id": "753487899865-c2pln8bgpndo6pftsrjmaa4o62i1dqkr.apps.googleusercontent.com",
+        "client_id": "717966230671-lg4nc4u6roorg07dcb6b2ri7rp476u8m.apps.googleusercontent.com",
         "auth_uri": "https://accounts.google.com/o/oauth2/auth",
         "token_uri": "https://accounts.google.com/o/oauth2/token",
         "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",  # noqa
-        "client_secret": "jHfeVJTxe4pxYAP0x4MlsYk-",
+        "client_secret": "BeBP75ABBBxyAQxKABbPgur4",
         "redirect_uris": [
             "http://localhost:5000/oauth2callback",
             "https://abalone.holberton.us/oauth2callback"],  # noqa

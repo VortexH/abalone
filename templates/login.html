@@ -30,9 +30,8 @@
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 
 	<!-- Google OAuth-->
-	<meta name="google-signin-scope" content="profile email">
-	<meta name="google-signin-client_id" content="753487899865-8a3d8ddl4a9vc3h947jl5ej09hq3v37q.apps.googleusercontent.com">
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="717966230671-lg4nc4u6roorg07dcb6b2ri7rp476u8m.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -45,25 +44,7 @@
 
 					</div>
 				</div>
-				<div class="card-body">
-					<div class="g-signin2" data-onsuccess="onSignIn"></div>
-					<!-- <script>
-						// get user info after login
-						function onSignIn(googleUser) {
-							var profile = googleUser.getBasicProfile();
-
-						// How to get user information: 
-						// id = profile.getId()
-						// name = profile.getName()
-						// given name = profile.getGivenName()
-						// family name = profile.getFamilyName()
-						// image url = profile.getImageUrl()
-						// email = profile.getEmail()
-							// The ID token for backend:
-							var id_token = googleUser.getAuthResponse().id_token;
-						}
-					</script> -->
-				</div>
+				<div class="g-signin2" data-onsuccess="onSignIn"></div>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
