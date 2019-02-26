@@ -6,6 +6,7 @@ background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
+margin: 0;
 }
 
 .container{
@@ -14,11 +15,10 @@ align-content: center;
 }
 
 .card{
-height: 370px;
-margin-top: auto;
+min-height: 300px;
 margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+width: 60%;
+background-color: lightblue;
 }
 
 .social_icon span{
@@ -52,7 +52,6 @@ border:0 !important;
 input:focus{
 outline: 0 0 0 0  !important;
 box-shadow: 0 0 0 0 !important;
-
 }
 
 .login_btn{
@@ -66,10 +65,19 @@ color: black;
 background-color: white;
 }
 
-.links{
+.stats{
 color: white;
 }
 
-.links a{
+.stats a{
 margin-left: 4px;
+}
+
+.search-bar {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.video-player {
+    margin: 30 auto;
 }
