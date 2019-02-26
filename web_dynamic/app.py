@@ -1,25 +1,20 @@
-#!/usr/bin/env python3
 """ Script to start a Flask web application """
-
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
+app.url.map.strict_slashes = False
+port = 5000
+host = '0.0.0.0'
 
-@app.route('/index', strict_slashes=False)
+@app.route('/')
 def index():
     ''' return the home page '''
-    return 'index page'
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
     ''' returns the login page '''
-    return 'login'
-
-@app.route('/logout')
-def logout():
-    ''' returns the logout page '''
-    return 'logout'
+    return render_template('login.html')
 
 if __name__ == '__main__':
     app.run('0.0.0.0', 5000)
