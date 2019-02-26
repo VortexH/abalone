@@ -38,17 +38,21 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 credentials = {
-        "client_id": "717966230671-lg4nc4u6roorg07dcb6b2ri7rp476u8m.apps.googleusercontent.com",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://accounts.google.com/o/oauth2/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",  # noqa
-        "client_secret": "BeBP75ABBBxyAQxKABbPgur4",
-        "redirect_uris": [
-            "http://localhost:5000/oauth2callback",
-            "https://abalone.holberton.us/oauth2callback"],  # noqa
-        "javascript_origins": [
-            "http://localhost:5000",
-            "https://abalone.holberton.us"]}
+      "client_id":"307822158181-j7kicrdobm9ka7nkqh7nul4po56l79mj.apps.googleusercontent.com",
+    "client_secret": "nz85Q-ArUSYlWgJpYadwBPZr",
+      "project_id":"abalone-1551215272554",
+      "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+      "token_uri":"https://oauth2.googleapis.com/token",
+      "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+      "redirect_uris":[
+         "http://abalone.holberton.us/oauth2callback",
+         "http://localhost:5000/oauth2callback"
+      ],
+      "javascript_origins":[
+         "http://localhost:5000",
+         "http://abalone.holberton.us"
+      ]
+   }
 
 CLIENT_ID = credentials['client_id']
 

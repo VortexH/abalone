@@ -31,7 +31,7 @@
 
 	<!-- Google OAuth-->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<meta name="google-signin-client_id" content="717966230671-lg4nc4u6roorg07dcb6b2ri7rp476u8m.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="307822158181-j7kicrdobm9ka7nkqh7nul4po56l79mj.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -55,6 +55,15 @@
 		</div>
 	</div>
 	</div>
+<script>
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+</script>
 </body>
 
 </html>
