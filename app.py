@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-from flask import Flask
-app = Flask(__name__)
+""" Script to start a Flask web application """
 
-@app.route('/')
+from flask import Flask
+
+app = Flask(__name__)
+app.url_map.strict_slashes = False
+
+@app.route('/index', strict_slashes=False)
 def index():
+    ''' return the home page '''
     return 'index page'
 
 @app.route('/login')
 def login():
+    ''' returns the login page '''
     return 'login'
 
 @app.route('/logout')
 def logout():
+    ''' returns the logout page '''
     return 'logout'
 
 if __name__ == '__main__':
