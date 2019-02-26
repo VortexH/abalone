@@ -21,7 +21,7 @@ align-content: center;
 }
 
 .card{
-min-height: 400px;
+min-height: 500px;
 margin-top:40px;
 max-width: 55%;
 background-color: lightblue;
@@ -60,4 +60,8 @@ margin-left: 4px;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.username {
+    font-style: bold;
 }

@@ -7,7 +7,7 @@
 
 #message-feed {
     background-color: white;
-    height: 250px;
+    height: 400px;
     overflow: scroll;
 }
 
@@ -16,6 +16,7 @@
     text-align: left;
     padding: 0;
     margin-left: 30px;
+    font-size: 12px;
 }
 
 #submit-button {
@@ -25,10 +26,9 @@
 textarea {
     margin: 0 auto;
     resize: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 90;
+    width: 90%;
     border: none;
+    padding: 0;
 }
 
 .time {
@@ -40,7 +40,7 @@ textarea {
 
 #submit-comment {
     vertical-align: top;
-    margin-top: 15px;
+    margin-top: 5px;
     width: 40px;
     height: 40px;
     padding: 0;
