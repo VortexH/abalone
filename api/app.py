@@ -6,7 +6,7 @@ import MySQLdb
 app = Flask(__name__)
 
 
-@app.route('/get_comments/<video_id>')
+@app.route('/api/get_comments/<video_id>')
 def get_comments(video_id):
     """ Returns a dictionary with the key being the video_id
         and the value being a list of lists containing a username,
@@ -38,7 +38,7 @@ def get_comments(video_id):
 
     return jsonify(response)
 
-@app.route('/submit_comment', methods=['POST'])
+@app.route('/api/submit_comment', methods=['POST'])
 def submit_comment():
     """ Takes in a JSON of this type
         {'video_id': [username, comment, timestamp]}
@@ -64,8 +64,12 @@ def submit_comment():
 
     query_string = 'SELECT id FROM users WHERE name="{}"'.format(username)
     cur.execute(query_string)
+    if len(cur.fetchall()) == 0:
+        cur.execute('INSERT INTO users (name) VALUES ("{}")'.format(username))
+        db.commit()
+    query_string = 'SELECT id FROM users WHERE name="{}"'.format(username)
+    cur.execute(query_string)
     user_id_tuple = cur.fetchall()[0]
-
     user_id = user_id_tuple[0]
 
     sql_string = 'INSERT INTO comments (user_id, video_id, comment, timestamp) VALUES ({}, "{}", "{}", "{}")'.format(
