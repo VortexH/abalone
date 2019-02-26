@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify, request
+import json
 import MySQLdb
 
 app = Flask(__name__)
@@ -40,13 +41,50 @@ def get_comments(video_id):
 @app.route('/submit_comment', methods=['POST'])
 def submit_comment():
     """ Takes in a JSON of this type
-        {'video_id': [ [username, comment, timestamp], ... ]}
+        {'video_id': [username, comment, timestamp]}
 
     """
-    print(type(request.form))
-    print(request.form)
-    return(jsonify(request.json))
+    db = MySQLdb.connect(
+            host = 'localhost',
+            user = 'root',
+            passwd = 'rkLotus956',
+            db='hackday_abalone'
+            )
 
+    cur = db.cursor()
+
+
+    response_dict = json.loads(request.data.decode('utf-8'))
+    print(response_dict)
+    value = list(response_dict.values())
+    value = value[0]
+    query_string = 'SELECT user_id FROM comments WHERE username="{}"'.format(value[0])
+    print(query_string)
+    
+    """
+    for row in cur.fetchall():
+        print(row[0])
+
+    userid = row[0]
+    print(userid)
+
+
+
+    sql_string = ''' INSERT INTO comments (user_id, video_id, comment, timestamp)
+        VALUES ({}, {}, {}, {})'''.format(
+                    userid,
+                    response_dict.keys()[0],
+                    response_dict.values()[1],
+                    response_dict.values()[2]
+                    )
+
+
+    cur.execute(sql_string)
+    """
+
+    db.close()
+
+    return jsonify('success')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='6000')
