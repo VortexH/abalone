@@ -10,7 +10,7 @@ $(document).ready(function(){
         newComment.val("");
         $('#message-feed ul').append(`<li class="loaded-comment"><span class="username"><strong>Username:</strong> </span><span class="time">${time_chat}</span><br><span class="message">${textVal}</span></li>`);
         videoId = localStorage.getItem("video_id");
-        dict = {videoId: ['user_name', textVal, time]}
+        dict = {[videoId]: ['user_name', textVal, time]}
         // alert(dict.videoId)
         $.ajax({
           url: 'https://abalone.holberton.us/api/submit_comment',
@@ -19,8 +19,7 @@ $(document).ready(function(){
           type: 'post',
           contentType: 'application/json',
           data: JSON.stringify(dict),
-          success: function(data, status) {
-            alert(data) }
+          success: function(data, status) {}
         });
     });
     // Enable enter key to submit comment.
