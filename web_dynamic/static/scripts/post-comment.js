@@ -10,6 +10,7 @@ $(document).ready(function(){
         newComment.val("");
         $('#message-feed ul').append(`<li class="loaded-comment"><span class="username"><strong>Username:</strong> </span><span class="time">${time_chat}</span><br><span class="message">${textVal}</span></li>`);
         videoId = localStorage.getItem("video_id");
+        username = localStorage.getItem("username");
         dict = {[videoId]: ['user_name', textVal, time]}
         // alert(dict.videoId)
         $.ajax({
